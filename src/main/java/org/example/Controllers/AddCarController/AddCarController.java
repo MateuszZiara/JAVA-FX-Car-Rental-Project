@@ -10,19 +10,13 @@ import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import org.example.Car.Car;
 import org.example.Controllers.AbstractController;
-import org.example.Controllers.AddAdmin.AddAdminController;
 import org.example.Controllers.AdminPanel.AdminPanelController;
-import org.example.Controllers.AppWindow.AppWindowController;
 import org.example.Database.Database;
 import org.example.User.User;
 
 import java.io.*;
 import java.sql.Blob;
 import java.sql.SQLException;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 import static org.example.App.carList;
 
@@ -45,12 +39,6 @@ public class AddCarController extends AbstractController {
     private TextField modelTextField;
 
     @FXML
-    private Button returnButton;
-
-    @FXML
-    private Button submitButton;
-
-    @FXML
     private Label warningLabel;
 
     private Blob imageView;
@@ -58,8 +46,8 @@ public class AddCarController extends AbstractController {
     @FXML
     void onReturn(ActionEvent event)
     {
-        AbstractController controller = new AdminPanelController();
-        controller.show(event, ((AdminPanelController) controller).path);
+        AdminPanelController controller = new AdminPanelController();
+        controller.show(event, controller.path);
     }
     Image convertBlobToImage()
     {
@@ -71,15 +59,13 @@ public class AddCarController extends AbstractController {
                 image = new Image(new ByteArrayInputStream(imageBytes));
                 binaryStream.close();
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
         return image;
     }
     @FXML
-    void onSubmitButton(ActionEvent event)
+    void onSubmitButton()
     {
         if(modelTextField.getText().isEmpty())
         {

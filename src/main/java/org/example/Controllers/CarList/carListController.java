@@ -4,16 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import org.example.App;
 import org.example.Car.Car;
 import org.example.Controllers.AbstractController;
-import org.example.Controllers.AddCarController.AddCarController;
 import org.example.Controllers.AppWindow.AppWindowController;
 import org.example.Controllers.Info.InfoController;
-import org.example.Controllers.SerachCar.SearchCarContoller;
 import org.example.Database.Database;
 import org.example.User.User;
 
@@ -34,8 +30,6 @@ public class carListController extends AbstractController
     String colorSearch;
     List<String> stringListBufor = new ArrayList<>();
     final public String path = "/fxml/carList.fxml";
-    @FXML
-    private Button before;
 
     @FXML
     private ImageView image1;
@@ -94,9 +88,6 @@ public class carListController extends AbstractController
     @FXML
     private Text model3;
 
-    @FXML
-    private Button next;
-
 
     @FXML
     private Button rent1;
@@ -107,8 +98,6 @@ public class carListController extends AbstractController
     @FXML
     private Button rent3;
 
-    @FXML
-    private Button returnButton;
     List<Car> matchCars = new ArrayList<>();
     int page = 0;
     int getMaxPage()
@@ -180,7 +169,7 @@ public class carListController extends AbstractController
                         matchNumber++;
                     }
                 }
-                if (matchNumber >= (int) stringList.size()) {
+                if (matchNumber >= stringList.size()) {
                     matchCars.add(car);
                 }
                 matchNumber = 0;
@@ -207,7 +196,7 @@ public class carListController extends AbstractController
                 model1.setVisible(true);
                 info1.setVisible(true);
                 if(mode != 2)
-                rent1.setVisible(true);
+                    rent1.setVisible(true);
                 modelLabel1.setVisible(true);
                 markLabel1.setVisible(true);
                 current++;
@@ -221,7 +210,7 @@ public class carListController extends AbstractController
                 model2.setVisible(true);
                 info2.setVisible(true);
                 if(mode != 2)
-                rent2.setVisible(true);
+                    rent2.setVisible(true);
                 modelLabel2.setVisible(true);
                 markLabel2.setVisible(true);
                 current++;
@@ -235,7 +224,7 @@ public class carListController extends AbstractController
                 model3.setVisible(true);
                 info3.setVisible(true);
                 if(mode != 2)
-                rent3.setVisible(true);
+                    rent3.setVisible(true);
                 modelLabel3.setVisible(true);
                 markLabel3.setVisible(true);
                 break;
@@ -245,7 +234,7 @@ public class carListController extends AbstractController
     }
 
     @FXML
-    void onBefore(ActionEvent event)
+    void onBefore()
     {
         if(page > 0)
         {
@@ -268,50 +257,50 @@ public class carListController extends AbstractController
     @FXML
     void onInfo1(ActionEvent event)
     { //TODO lepszego if'a trzeba zrobic
-        AbstractController controller = new InfoController();
+        InfoController controller = new InfoController();
 
         if(3*page < matchCars.size()) {
             if(colorSearch != null)
-                ((InfoController) controller).setColorSearch(colorSearch);
+                controller.setColorSearch(colorSearch);
             if(markSearch != null)
-                ((InfoController) controller).setMarkSearch(markSearch);
+                controller.setMarkSearch(markSearch);
             if(modelSearch != null)
-                ((InfoController) controller).setModelSearch(modelSearch);
+                controller.setModelSearch(modelSearch);
             if(stringListBufor != null)
-                ((InfoController) controller).setStringList(stringListBufor);
+                controller.setStringList(stringListBufor);
 
-            ((InfoController) controller).setMode(mode);
+            controller.setMode(mode);
             ImageView imageView = new ImageView();
             imageView.setImage(matchCars.get(3*page).getImage());
 
-            ((InfoController) controller).setModelText(new Text(matchCars.get(3*page).getModel()));
-            ((InfoController) controller).setColorText(new Text(matchCars.get(3*page).getColor()));
-            ((InfoController) controller).setMarkText(new Text(matchCars.get(3*page).getMark()));
-            ((InfoController) controller).setCostText(new Text(String.valueOf(matchCars.get(3*page).getCost())));
-            ((InfoController) controller).setRentText(new Text(matchCars.get(3*page).getData_wyp()));
-            ((InfoController) controller).setImage(imageView);
-            ((InfoController) controller).setId(matchCars.get(3*page).getId());
+            controller.setModelText(new Text(matchCars.get(3*page).getModel()));
+            controller.setColorText(new Text(matchCars.get(3*page).getColor()));
+            controller.setMarkText(new Text(matchCars.get(3*page).getMark()));
+            controller.setCostText(new Text(String.valueOf(matchCars.get(3*page).getCost())));
+            controller.setRentText(new Text(matchCars.get(3*page).getData_wyp()));
+            controller.setImage(imageView);
+            controller.setId(matchCars.get(3*page).getId());
 
 
 
         }
-        controller.show(event, ((InfoController) controller).path);
+        controller.show(event, controller.path);
     }
 
     @FXML
-    void onInfo2(ActionEvent event)
+    void onInfo2()
     {
 
     }
 
     @FXML
-    void onInfo3(ActionEvent event)
+    void onInfo3()
     {
 
     }
 
     @FXML
-    void onNext(ActionEvent event) {
+    void onNext() {
         if(page < getMaxPage())
         {
             page ++;
@@ -324,8 +313,7 @@ public class carListController extends AbstractController
         Instant instant = Instant.now();
         LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.of("Europe/Warsaw"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String formattedDateTime = dateTime.format(formatter);
-        return formattedDateTime;
+        return dateTime.format(formatter);
     }
 
     @FXML
@@ -335,8 +323,8 @@ public class carListController extends AbstractController
             database.rentCarUpdate(matchCars.get(3 * page), getDate());
             matchCars.get(3 * page).setBuyer_id(User.getInstance().getId());
             updateList(matchCars.get(3 * page));
-            AbstractController controller = new AppWindowController();
-            controller.show(event, ((AppWindowController) controller).path);
+            AppWindowController controller = new AppWindowController();
+            controller.show(event, controller.path);
         }
 
 
@@ -344,12 +332,10 @@ public class carListController extends AbstractController
     void updateList(Car car)
     {
 
-        for(int i = 0; i< carList.size(); ++i)
-        {
-            if(carList.get(i).getId() == car.getId())
-            {
-               carList.get(i).setBuyer_id(car.getBuyer_id());
-               carList.get(i).setData_wyp(getDate());
+        for (Car value : carList) {
+            if (value.getId() == car.getId()) {
+                value.setBuyer_id(car.getBuyer_id());
+                value.setData_wyp(getDate());
             }
         }
     }
@@ -362,8 +348,8 @@ public class carListController extends AbstractController
             database.rentCarUpdate(matchCars.get(3*page+1), getDate());
             matchCars.get(3 * page + 1).setBuyer_id(User.getInstance().getId());
             updateList(matchCars.get(3 * page));
-            AbstractController controller = new AppWindowController();
-            controller.show(event, ((AppWindowController) controller).path);
+            AppWindowController controller = new AppWindowController();
+            controller.show(event, controller.path);
         }
 
     }
@@ -376,16 +362,16 @@ public class carListController extends AbstractController
             database.rentCarUpdate(matchCars.get(3*page+2), getDate());
             matchCars.get(3 * page + 2).setBuyer_id(User.getInstance().getId());
             updateList(matchCars.get(3 * page));
-            AbstractController controller = new AppWindowController();
-            controller.show(event, ((AppWindowController) controller).path);
+            AppWindowController controller = new AppWindowController();
+            controller.show(event, controller.path);
         }
     }
 
     @FXML
     void onReturn(ActionEvent event)
     {
-        AbstractController controller = new AppWindowController();
-        controller.show(event, ((AppWindowController) controller).path);
+        AppWindowController controller = new AppWindowController();
+        controller.show(event, controller.path);
     }
 
     public void setMode(int mode) {

@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import org.example.Car.Car;
@@ -13,9 +12,7 @@ import org.example.Controllers.AbstractController;
 import org.example.Controllers.CarList.carListController;
 import org.example.Database.Database;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.example.App.carList;
@@ -42,34 +39,15 @@ public class InfoController extends AbstractController
     @FXML
     private Label rentDateLabel;
 
-    public Text getColorText() {
-        return colorText;
-    }
-
-    public Text getCostText() {
-        return costText;
-    }
-
     public ImageView getImage() {
         return image;
     }
 
-    public Text getMarkText() {
-        return markText;
-    }
-
-    public Text getModelText() {
-        return modelText;
-    }
     @FXML
     private Button endRent;
 
     public Button getOnReturn() {
         return onReturn;
-    }
-
-    public Text getRentText() {
-        return rentText;
     }
 
     public void setColorText(Text colorText) {
@@ -120,7 +98,7 @@ public class InfoController extends AbstractController
 
     @FXML
     private Text rentText;
-    private String text;
+
     public void setStringList(List<String> stringList) {
         this.stringList = stringList;
     }
@@ -144,21 +122,21 @@ public class InfoController extends AbstractController
     @FXML
     void onReturn(ActionEvent event)
     {
-        AbstractController controller = new carListController();
-        ((carListController) controller).setMode(mode);
+        carListController controller = new carListController();
+        controller.setMode(mode);
         if(mode == 0)
         {
-            ((carListController) controller).setColorSearch(colorSearch);
-            ((carListController) controller).setModelSearch(modelSearch);
-            ((carListController) controller).setMarkSearch(markSearch);
+            controller.setColorSearch(colorSearch);
+            controller.setModelSearch(modelSearch);
+            controller.setMarkSearch(markSearch);
         }
         if(mode == 1)
         {
 
-            ((carListController) controller).searchDefault(stringList);
-            ((carListController) controller).setMode(1);
+            controller.searchDefault(stringList);
+            controller.setMode(1);
         }
-        controller.show(event, ((carListController) controller).path);
+        controller.show(event, controller.path);
     }
     @Override
     public void init(FXMLLoader loader)
@@ -199,16 +177,14 @@ public class InfoController extends AbstractController
     {
         Database database = new Database();
         database.rentCarEnd(id);
-        AbstractController controller = new carListController();
-        ((carListController) controller).setMode(2);
-        for(int i = 0; i< carList.size(); ++i)
-        {
-            if(carList.get(i).getId() == id)
-            {
-                carList.get(i).setBuyer_id(-1);
+        carListController controller = new carListController();
+        controller.setMode(2);
+        for (Car car : carList) {
+            if (car.getId() == id) {
+                car.setBuyer_id(-1);
             }
         }
-        controller.show(event, ((carListController) controller).path);
+        controller.show(event, controller.path);
 
     }
 }

@@ -45,9 +45,6 @@ public class Car {
         return buyer_id;
     }
 
-    public int getSeller_id() {
-        return seller_id;
-    }
     public Image getImage() {
         return image;
     }

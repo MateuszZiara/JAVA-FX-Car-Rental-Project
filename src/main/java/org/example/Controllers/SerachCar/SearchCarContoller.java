@@ -2,7 +2,6 @@ package org.example.Controllers.SerachCar;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import org.example.Controllers.AbstractController;
 import org.example.Controllers.AppWindow.AppWindowController;
@@ -21,26 +20,20 @@ public class SearchCarContoller extends AbstractController{
     private TextField modelTextField;
 
     @FXML
-    private Button returnButton;
-
-    @FXML
-    private Button searchButton;
-
-    @FXML
     void onReturn(ActionEvent event)
     {
-        AbstractController controller = new AppWindowController();
-        controller.show(event, ((AppWindowController) controller).path);
+        AppWindowController controller = new AppWindowController();
+        controller.show(event, controller.path);
     }
 
     @FXML
     void onSearch(ActionEvent event)
     {
-        AbstractController controller = new carListController();
-        ((carListController) controller).setColorSearch(colorTextField.getText());
-        ((carListController) controller).setModelSearch(modelTextField.getText());
-        ((carListController) controller).setMarkSearch(markTextField.getText());
-        controller.show(event, ((carListController) controller).path);
+        carListController controller = new carListController();
+        controller.setColorSearch(colorTextField.getText());
+        controller.setModelSearch(modelTextField.getText());
+        controller.setMarkSearch(markTextField.getText());
+        controller.show(event, controller.path);
     }
 
 }

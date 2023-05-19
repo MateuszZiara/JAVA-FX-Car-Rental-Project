@@ -2,7 +2,6 @@ package org.example.Controllers.Register;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,14 +9,7 @@ import org.example.Controllers.AbstractController;
 import org.example.Controllers.Login.LoginController;
 import org.example.Database.Database;
 
-import javax.xml.crypto.Data;
-
 public class RegisterController extends AbstractController {
-    @FXML
-    private Button CreateAccountButton;
-
-    @FXML
-    private Button ReturnButton;
 
     @FXML
     private TextField firstNameTextField;
