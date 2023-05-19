@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="337.0" prefWidth="487.0" style="-fx-background-color: #14213d;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AddAdmin.AddAdminController">
+   <children>
+      <AnchorPane prefHeight="97.0" prefWidth="400.0" style="-fx-background-color: #fca311;">
+         <children>
+            <Label layoutX="45.0" layoutY="19.0" text="ADD/Remove">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="49.0" text="ADMIN">
+               <font>
+                  <Font name="Calibri Bold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="91.0" fitWidth="90.0" layoutX="397.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Logo_1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="82.0" layoutY="148.0" text="Login:" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginTextField" layoutX="164.0" layoutY="147.0" prefHeight="25.0" prefWidth="275.0" promptText="Login" stylesheets="@../css/wpisywanie.css" />
+      <Label fx:id="warningLabel" alignment="CENTER" layoutX="140.0" layoutY="224.0" prefHeight="17.0" prefWidth="275.0" textFill="#cd1818">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="addAdminButton" fitHeight="47.0" fitWidth="47.0" layoutX="93.0" layoutY="249.0" onMouseClicked="#onAddAdminButton" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/dodaj osobe.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="removeAdmin" fitHeight="47.0" fitWidth="47.0" layoutX="244.0" layoutY="249.0" onMouseClicked="#onRemoveAdmin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/keyboard_return_FILL0_wght400_GRAD0_opsz48.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="returnButton" fitHeight="47.0" fitWidth="47.0" layoutX="392.0" layoutY="249.0" onMouseClicked="#onReturn" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/return.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

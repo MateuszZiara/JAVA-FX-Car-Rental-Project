@@ -1,0 +1,26 @@
+.button {
+  -fx-background-color: #fca311;
+  -fx-font-family: inherit;
+  -fx-padding: 0.2em 1.3em;
+  -fx-font-weight: 900;
+  -fx-font-size: 18px;
+  -fx-border-color: #fb8500;
+  -fx-border-width: 3px;
+  -fx-border-radius: 1.1em;
+  -fx-background-radius: 30 30 30 30;
+  -fx-font: 18px "Arial Black", sans-serif 900;
+
+}
+
+.button:hover {
+     -fx-translate-x: -0.05em;
+     -fx-translate-y: -0.05em;
+     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.5) , 4,0,0,2 );
+
+}
+
+.button:pressed {
+    -fx-translate-x: 0.05em;
+    -fx-translate-y: 0.05em;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.5) , 2,0,0,1 );
+}

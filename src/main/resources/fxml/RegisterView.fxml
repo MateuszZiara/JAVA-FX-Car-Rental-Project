@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="385.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Register.RegisterController">
+   <children>
+      <AnchorPane layoutX="-10.0" layoutY="-2.0" prefHeight="414.0" prefWidth="326.0" style="-fx-background-color: #14213D;">
+         <children>
+            <TextField fx:id="loginTextField" layoutX="50.0" layoutY="84.0" prefHeight="25.0" prefWidth="188.0" promptText="Login" stylesheets="@../css/Obramowanie.css">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </TextField>
+            <PasswordField id="PasswordField" fx:id="passwordTextField" layoutX="50.0" layoutY="147.0" prefHeight="25.0" prefWidth="188.0" promptText="Hasło" stylesheets="@../css/Obramowanie.css" />
+            <TextField id="FirstNameField" fx:id="firstNameTextField" layoutX="50.0" layoutY="210.0" prefHeight="25.0" prefWidth="188.0" promptText="Imię" stylesheets="@../css/Obramowanie.css" />
+            <TextField id="LastNameField" fx:id="lastnameTextField" layoutX="50.0" layoutY="273.0" prefHeight="25.0" prefWidth="188.0" promptText="Nazwisko" stylesheets="@../css/Obramowanie.css" />
+            <TextField id="LastNameField" fx:id="peselTextField" layoutX="50.0" layoutY="337.0" prefHeight="25.0" prefWidth="188.0" promptText="Pesel" styleClass="PeselField" stylesheets="@../css/Obramowanie.css" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="296.0" layoutY="-2.0" prefHeight="414.0" prefWidth="283.0" style="-fx-background-color: #e5e5e5;">
+         <children>
+            <Button id="CreateAccountButton" fx:id="CreateAccountButton" layoutX="48.0" layoutY="307.0" mnemonicParsing="false" onAction="#CreateAccountButtonOnClick" prefHeight="41.0" prefWidth="188.0" style=": 10;" stylesheets="@../css/Guzik.css" text="Utwórz konto" />
+            <Button id="CloseButton" fx:id="ReturnButton" layoutX="48.0" layoutY="359.0" mnemonicParsing="false" onAction="#ReturnButtonOnClick" prefHeight="41.0" prefWidth="188.0" stylesheets="@../css/Guzik.css" text="Powrót" />
+            <ImageView fitHeight="236.0" fitWidth="236.0" layoutX="24.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="warningLabel" alignment="CENTER" layoutY="264.0" prefHeight="27.0" prefWidth="284.0" textFill="#e10606">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="61.0" prefWidth="579.0" style="-fx-background-color: #FCA311;">
+         <children>
+            <Text fill="WHITE" layoutX="189.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rejestracja">
+               <font>
+                  <Font name="Calibri Bold" size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

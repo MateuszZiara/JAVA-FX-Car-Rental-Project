@@ -1,0 +1,64 @@
+.text-field {
+  -fx-background-color: transparent;
+  -fx-prompt-text-fill: #b5b5b5;
+  -fx-text-fill: #ffffff;
+  -fx-font-size: 14px;
+  -fx-font-family: "Segoe UI", sans-serif;
+  -fx-padding: 10px;
+  -fx-border-style: none none solid none;
+  -fx-border-width: 3px;
+  -fx-border-color: #ffffff;
+  -fx-background-insets: 0;
+   -fx-effect: dropshadow(gaussian, #123456, 20, 0, 0, 0);
+}
+
+.text-field:focused {
+  -fx-border-color: #fca311;
+  -fx-background-insets: -2 -2 0 -2;
+  -fx-background-radius: 0;
+  -fx-border-radius: 0;
+}
+
+.text-field:focused .text {
+  -fx-effect: dropshadow(gaussian, #fca311, 10, 0, 0, 0);
+}
+
+.text-field:focused .prompt-text {
+  -fx-opacity: 0;
+}
+
+.text-field:focused .label {
+  -fx-translate-y: -22px;
+  -fx-text-fill: #ffffff;
+  -fx-font-size: 12px;
+  -fx-background-color: #ffffff;
+  -fx-padding: 0 5px;
+  -fx-font-weight: bold;
+  -fx-font-family: "Segoe UI", sans-serif;
+  -fx-border-style: solid;
+  -fx-border-width: 2px;
+  -fx-border-color: #ffffff;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+  -fx-effect: dropshadow(gaussian, #ff0000, 20, 0, 0, 0);
+}
+
+.text-field:focused .bar {
+  -fx-background-color: #ffffff;
+  -fx-background-insets: -1 -1 0 -1;
+  -fx-translate-y: 4px;
+  -fx-scale-x: 0;
+  -fx-animation: load 0.5s forwards;
+}
+
+@keyframes load {
+  0% {
+    -fx-scale-x: 0;
+  }
+  50% {
+    -fx-scale-x: 1;
+  }
+  100% {
+    -fx-scale-x: 1;
+  }
+}

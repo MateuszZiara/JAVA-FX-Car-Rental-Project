@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" style="-fx-background-color: #8ecae6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Login.LoginController">
+   <left>
+      <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #FCA311;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="194.0" layoutX="17.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Logo_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="14.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/contacts_FILL1_wght400_GRAD0_opsz48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="13.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/call_FILL1_wght400_GRAD0_opsz48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="39.0" layoutX="13.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/mail_FILL1_wght400_GRAD0_opsz48.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="52.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kielce, Ul. Super 15">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="52.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+48 123-456-789">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="52.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dritteMCars@gmail.com">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #14213D;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="loginTextField" layoutX="55.0" layoutY="64.0" prefHeight="26.0" prefWidth="213.0" promptText="Username" stylesheets="@../css/wpisywanie.css" />
+            <PasswordField fx:id="passwordTextField" layoutX="55.0" layoutY="152.0" prefHeight="25.0" prefWidth="210.0" promptText="Password" stylesheets="@../css/haslo_wpisywanie.css" />
+            <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="14.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Car_Garage (4).png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="14.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Car_Garage (5).png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <Button fx:id="loginButton" layoutX="22.0" layoutY="277.0" mnemonicParsing="false" onAction="#onButtonLogin" prefHeight="0.0" prefWidth="253.0" stylesheets="@../css/styles.css" text="Login" />
+            <Button fx:id="registerButton" layoutX="22.0" layoutY="327.0" mnemonicParsing="false" onAction="#onButtonRegister" prefHeight="37.0" prefWidth="253.0" stylesheets="@../css/styles.css" text="Register" />
+            <Label fx:id="warningLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="224.0" prefHeight="21.0" prefWidth="289.0" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

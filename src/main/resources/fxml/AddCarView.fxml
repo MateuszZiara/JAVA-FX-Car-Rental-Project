@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AddCarController.AddCarController">
+   <children>
+      <AnchorPane layoutX="-4.0" prefHeight="82.0" prefWidth="610.0" style="-fx-background-color: orange;">
+         <children>
+            <Label layoutX="42.0" layoutY="20.0" text="Add Car">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="51.0" layoutY="126.0" text="Model">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="159.0" text="Mark">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="193.0" text="Color">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="modelTextField" layoutX="139.0" layoutY="127.0" prefHeight="25.0" prefWidth="348.0" />
+      <TextField fx:id="markTextField" layoutX="139.0" layoutY="160.0" prefHeight="25.0" prefWidth="348.0" />
+      <TextField fx:id="colorTextField" layoutX="139.0" layoutY="194.0" prefHeight="25.0" prefWidth="348.0" />
+      <Button fx:id="submitButton" layoutX="139.0" layoutY="289.0" mnemonicParsing="false" onAction="#onSubmitButton" prefHeight="43.0" prefWidth="98.0" text="Submit" />
+      <Button fx:id="imageChooseButton" layoutX="139.0" layoutY="228.0" mnemonicParsing="false" text="Image" />
+      <Label layoutX="14.0" layoutY="227.0" text="Upload Image:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="warningLabel" alignment="CENTER" layoutX="1.0" layoutY="94.0" prefHeight="21.0" prefWidth="606.0" textFill="#cd0f0f">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="returnButton" layoutX="301.0" layoutY="289.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="43.0" prefWidth="98.0" text="Return" />
+      <Label layoutX="63.0" layoutY="92.0" text="Cost">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="costTextField" layoutX="139.0" layoutY="93.0" prefHeight="25.0" prefWidth="348.0" />
+   </children>
+</AnchorPane>
