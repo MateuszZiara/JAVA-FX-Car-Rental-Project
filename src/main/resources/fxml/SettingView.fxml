@@ -1,64 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AccountSettings.SettingsController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AccountSettings.SettingsController">
    <children>
-      <AnchorPane layoutY="-9.0" prefHeight="98.0" prefWidth="600.0" style="-fx-background-color: orange;">
+      <AnchorPane layoutY="-10.0" prefHeight="89.0" prefWidth="600.0" style="-fx-background-color: orange;">
          <children>
-            <Text layoutX="53.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER">
+            <Text layoutX="53.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ustawienia" textAlignment="CENTER">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Calibri Bold" size="40.0" />
                </font>
             </Text>
+            <ImageView fitHeight="84.0" fitWidth="85.0" layoutX="502.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Text layoutX="88.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login:" textAlignment="CENTER">
+      <Text layoutX="16.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login:" textAlignment="CENTER">
          <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="59.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name:" textAlignment="CENTER">
+      <Text layoutX="16.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:" textAlignment="CENTER">
          <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="59.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last name:" textAlignment="CENTER">
+      <Text layoutX="16.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:" textAlignment="CENTER">
          <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="89.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesel:" textAlignment="CENTER">
+      <Text layoutX="317.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesel:" textAlignment="CENTER">
          <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="62.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" textAlignment="CENTER">
+      <Text layoutX="314.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło:" textAlignment="CENTER">
          <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="21.0" />
          </font>
       </Text>
-      <TextField fx:id="firstnameTextField" layoutX="151.0" layoutY="157.0" prefHeight="25.0" prefWidth="177.0" />
-      <TextField fx:id="lastnameTextField" layoutX="151.0" layoutY="188.0" prefHeight="25.0" prefWidth="177.0" />
-      <TextField fx:id="peselTextField" layoutX="151.0" layoutY="223.0" prefHeight="25.0" prefWidth="177.0" />
-      <PasswordField fx:id="passwordTextField" layoutX="151.0" layoutY="254.0" prefHeight="25.0" prefWidth="177.0" />
-      <Button fx:id="confirmButton" layoutX="151.0" layoutY="316.0" mnemonicParsing="false" onAction="#onConfirm" prefHeight="25.0" prefWidth="70.0" text="Confirm" />
-      <Button fx:id="cancelButton" layoutX="277.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="25.0" prefWidth="70.0" text="Cancel" />
-      <Label fx:id="loginLabel" layoutX="151.0" layoutY="128.0" prefHeight="25.0" prefWidth="77.0" text="Label">
+      <TextField fx:id="firstnameTextField" layoutX="109.0" layoutY="144.0" prefHeight="25.0" prefWidth="177.0" stylesheets="@../css/Obramowanie.css" />
+      <TextField fx:id="lastnameTextField" layoutX="109.0" layoutY="198.0" prefHeight="25.0" prefWidth="177.0" stylesheets="@../css/Obramowanie.css" />
+      <TextField fx:id="peselTextField" layoutX="389.0" layoutY="143.0" prefHeight="25.0" prefWidth="177.0">
+         <stylesheets>
+            <URL value="@../css/wpisywanie.css" />
+            <URL value="@../css/Obramowanie.css" />
+         </stylesheets></TextField>
+      <PasswordField fx:id="passwordTextField" layoutX="389.0" layoutY="198.0" prefHeight="25.0" prefWidth="177.0" stylesheets="@../css/Obramowanie.css" />
+      <Button fx:id="confirmButton" layoutX="413.0" layoutY="316.0" mnemonicParsing="false" onAction="#onConfirm" prefHeight="41.0" prefWidth="153.0" stylesheets="@../css/Guzik.css" text="Zatwierdź" />
+      <Button fx:id="cancelButton" layoutX="33.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="41.0" prefWidth="127.0" stylesheets="@../css/Guzik.css" text="Anuluj" />
+      <Label fx:id="loginLabel" layoutX="109.0" layoutY="107.0" prefHeight="25.0" prefWidth="77.0" text="Label">
          <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="warningLabel" alignment="CENTER" layoutX="1.0" layoutY="97.0" prefHeight="25.0" prefWidth="600.0" textFill="#da0e0e">
-         <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Label>
    </children>

@@ -256,7 +256,7 @@ public class carListController extends AbstractController
 
     @FXML
     void onInfo1(ActionEvent event)
-    { //TODO lepszego if'a trzeba zrobic
+    {
         InfoController controller = new InfoController();
 
         if(3*page < matchCars.size()) {
@@ -288,15 +288,69 @@ public class carListController extends AbstractController
     }
 
     @FXML
-    void onInfo2()
+    void onInfo2(ActionEvent event)
     {
+        InfoController controller = new InfoController();
 
+        if(3*page < matchCars.size()) {
+            if(colorSearch != null)
+                controller.setColorSearch(colorSearch);
+            if(markSearch != null)
+                controller.setMarkSearch(markSearch);
+            if(modelSearch != null)
+                controller.setModelSearch(modelSearch);
+            if(stringListBufor != null)
+                controller.setStringList(stringListBufor);
+
+            controller.setMode(mode);
+            ImageView imageView = new ImageView();
+            imageView.setImage(matchCars.get(3*page+1).getImage());
+
+            controller.setModelText(new Text(matchCars.get(3*page+1).getModel()));
+            controller.setColorText(new Text(matchCars.get(3*page+1).getColor()));
+            controller.setMarkText(new Text(matchCars.get(3*page+1).getMark()));
+            controller.setCostText(new Text(String.valueOf(matchCars.get(3*page+1).getCost())));
+            controller.setRentText(new Text(matchCars.get(3*page+1).getData_wyp()));
+            controller.setImage(imageView);
+            controller.setId(matchCars.get(3*page+1).getId());
+
+
+
+        }
+        controller.show(event, controller.path);
     }
 
     @FXML
-    void onInfo3()
+    void onInfo3(ActionEvent event)
     {
+        InfoController controller = new InfoController();
 
+        if(3*page < matchCars.size()) {
+            if(colorSearch != null)
+                controller.setColorSearch(colorSearch);
+            if(markSearch != null)
+                controller.setMarkSearch(markSearch);
+            if(modelSearch != null)
+                controller.setModelSearch(modelSearch);
+            if(stringListBufor != null)
+                controller.setStringList(stringListBufor);
+
+            controller.setMode(mode);
+            ImageView imageView = new ImageView();
+            imageView.setImage(matchCars.get(3*page+2).getImage());
+
+            controller.setModelText(new Text(matchCars.get(3*page+2).getModel()));
+            controller.setColorText(new Text(matchCars.get(3*page+2).getColor()));
+            controller.setMarkText(new Text(matchCars.get(3*page+2).getMark()));
+            controller.setCostText(new Text(String.valueOf(matchCars.get(3*page+2).getCost())));
+            controller.setRentText(new Text(matchCars.get(3*page+2).getData_wyp()));
+            controller.setImage(imageView);
+            controller.setId(matchCars.get(3*page+2).getId());
+
+
+
+        }
+        controller.show(event, controller.path);
     }
 
     @FXML

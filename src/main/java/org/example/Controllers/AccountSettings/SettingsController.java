@@ -32,7 +32,7 @@ public class SettingsController extends AbstractController {
     private TextField peselTextField;
 
     @FXML
-    private Label warningLabel;
+    Label warningLabel;
 
     @FXML
     void onCancel(ActionEvent event)

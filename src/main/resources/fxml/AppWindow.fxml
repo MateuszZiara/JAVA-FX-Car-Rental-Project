@@ -8,29 +8,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AppWindow.AppWindowController">
+<AnchorPane prefHeight="600.0" prefWidth="519.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AppWindow.AppWindowController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="235.0" style="-fx-background-color: #ff6600;">
+      <AnchorPane prefHeight="600.0" prefWidth="235.0" style="-fx-background-color: #14213D;">
          <children>
             <ImageView fx:id="avatar" fitHeight="68.0" fitWidth="64.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/avatar.png" />
                </image>
             </ImageView>
-            <Label fx:id="loginLabel" alignment="CENTER" layoutX="78.0" layoutY="26.0" prefHeight="55.0" prefWidth="148.0" text="Label">
+            <Label fx:id="loginLabel" alignment="CENTER" layoutX="78.0" layoutY="26.0" prefHeight="55.0" prefWidth="148.0" text="Label" textFill="WHITE">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Calibri Bold" size="33.0" />
                </font>
             </Label>
-            <Button fx:id="accountsettingsButton" layoutX="44.0" layoutY="182.0" mnemonicParsing="false" onAction="#onaccountsettingsButtonClick" prefHeight="48.0" prefWidth="148.0" text="Settings" />
-            <Button fx:id="logoutButton" layoutX="44.0" layoutY="283.0" mnemonicParsing="false" onAction="#onlogoutButtonClick" prefHeight="48.0" prefWidth="148.0" text="Log out" />
+            <Button fx:id="accountsettingsButton" layoutX="44.0" layoutY="449.0" mnemonicParsing="false" onAction="#onaccountsettingsButtonClick" prefHeight="48.0" prefWidth="148.0" stylesheets="@../css/Guzik.css" text="Settings" />
+            <Button fx:id="logoutButton" layoutX="44.0" layoutY="518.0" mnemonicParsing="false" onAction="#onlogoutButtonClick" prefHeight="48.0" prefWidth="148.0" stylesheets="@../css/Guzik.css" text="Log out" />
+            <Button fx:id="showCarsButton" layoutX="31.0" layoutY="130.0" mnemonicParsing="false" onAction="#onShowCarsButton" prefHeight="48.0" prefWidth="174.0" stylesheets="@../css/Guzik.css" text="Zobacz auta" />
+            <Button fx:id="searchCarsButton" layoutX="28.0" layoutY="191.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="48.0" prefWidth="181.0" stylesheets="@../css/Guzik.css" text="Szukaj aut" />
+            <Button layoutX="31.0" layoutY="252.0" mnemonicParsing="false" onAction="#onMyCars" prefHeight="48.0" prefWidth="174.0" stylesheets="@../css/Guzik.css" text="Twoje auta" />
          </children>
       </AnchorPane>
       <Button fx:id="addCarButton" layoutX="450.0" layoutY="46.0" mnemonicParsing="false" onAction="#onAddCarButton" prefHeight="48.0" prefWidth="110.0" text="Admin Panel" visible="false" />
-      <Button fx:id="showCarsButton" layoutX="450.0" layoutY="94.0" mnemonicParsing="false" onAction="#onShowCarsButton" prefHeight="48.0" prefWidth="110.0" text="Show Cars" />
-      <Button fx:id="searchCarsButton" layoutX="450.0" layoutY="154.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="48.0" prefWidth="110.0" text="Search Cars" />
-      <TextField fx:id="defaultSearch" layoutX="521.0" layoutY="21.0" prefHeight="25.0" prefWidth="213.0" />
-      <Button fx:id="defaultSearchButton" layoutX="740.0" layoutY="21.0" mnemonicParsing="false" onAction="#onDefaultSearch" text="Search" />
-      <Button layoutX="450.0" layoutY="224.0" mnemonicParsing="false" onAction="#onMyCars" prefHeight="48.0" prefWidth="110.0" text="My cars" />
+      <TextField fx:id="defaultSearch" layoutX="248.0" layoutY="34.0" prefHeight="25.0" prefWidth="213.0" />
+      <Button fx:id="defaultSearchButton" layoutX="472.0" layoutY="31.0" mnemonicParsing="false" onAction="#onDefaultSearch" stylesheets="@../css/MiniGuzik.css" text="Szukaj" />
+      <ImageView fitHeight="285.0" fitWidth="273.0" layoutX="259.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

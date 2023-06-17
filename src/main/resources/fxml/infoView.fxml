@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Info.InfoController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;">
          <children>
             <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="311.0" layoutY="43.0" text="Mark">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Calibri" size="18.0" />
                </font>
             </Label>
             <Label layoutX="310.0" layoutY="70.0" text="Model">
@@ -62,7 +62,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button fx:id="onReturn" layoutX="260.0" layoutY="296.0" mnemonicParsing="false" onAction="#onReturn" text="Return">
+            <Button fx:id="onReturn" layoutX="260.0" layoutY="296.0" mnemonicParsing="false" onAction="#onReturn" stylesheets="@../css/Guzik.css" text="Powrót">
                <font>
                   <Font size="17.0" />
                </font>
